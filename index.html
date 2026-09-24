@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GENZ STUDY ZONE</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="app">
+
+    <!-- ================= HOME ================= -->
+
+    <section id="homePage" class="page active">
+
+        <div class="home-content">
+
+            <div class="logo">
+                <span>⚡</span>
+                GENZ
+            </div>
+
+            <p class="small-title">
+                FOCUS • STUDY • CONQUER
+            </p>
+
+            <h1>
+                YOUR STUDY.<br>
+                YOUR RULES.
+            </h1>
+
+            <p class="home-subtitle">
+                Choose how you want to study today.
+            </p>
+
+
+            <div class="choice-container">
+
+                <button
+                    class="choice-card"
+                    id="openCountdown">
+
+                    <div class="choice-icon">
+                        ⏳
+                    </div>
+
+                    <div>
+                        <h2>Countdown</h2>
+
+                        <p>
+                            Set your time and lock in.
+                        </p>
+                    </div>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="choice-card"
+                    id="openStopwatch">
+
+                    <div class="choice-icon">
+                        ⏱️
+                    </div>
+
+                    <div>
+                        <h2>Stopwatch</h2>
+
+                        <p>
+                            Start studying and track your time.
+                        </p>
+                    </div>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <button
+                class="setup-button"
+                id="openSettings">
+
+                ⚙️ Customize Study Zone
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= COUNTDOWN PAGE ================= -->
+
+    <section id="countdownPage" class="page study-page">
+
+        <header class="topbar">
+
+            <button
+                class="back-button"
+                id="countdownBack">
+
+                ← Home
+
+            </button>
+
+            <div class="exam-top">
+
+                <span>PREPARING FOR</span>
+
+                <strong id="countdownExam">
+                    NIMCET 2027
+                </strong>
+
+            </div>
+
+            <div class="streak">
+                🔥 <span id="countdownStreak">0</span>
+            </div>
+
+        </header>
+
+
+        <div class="study-layout">
+
+
+            <!-- TIMER -->
+
+            <div class="timer-section">
+
+                <div class="timer-label">
+                    COUNTDOWN
+                </div>
+
+                <div
+                    class="big-timer"
+                    id="countdownDisplay">
+
+                    25:00
+
+                </div>
+
+
+                <div class="timer-input">
+
+                    <input
+                        type="number"
+                        id="countdownMinutes"
+                        value="25"
+                        min="0"
+                        max="999">
+
+                    <span>:</span>
+
+                    <input
+                        type="number"
+                        id="countdownSeconds"
+                        value="00"
+                        min="0"
+                        max="59">
+
+                </div>
+
+
+                <div class="timer-buttons">
+
+                    <button
+                        class="main-button"
+                        id="countdownStart">
+
+                        ▶ Start
+
+                    </button>
+
+                    <button
+                        class="secondary-button"
+                        id="countdownPause">
+
+                        ⏸ Pause
+
+                    </button>
+
+                    <button
+                        class="secondary-button"
+                        id="countdownReset">
+
+                        ↻ Reset
+
+                    </button>
+
+                </div>
+
+
+                <div class="quick-times">
+
+                    <button data-time="25">25 min</button>
+                    <button data-time="45">45 min</button>
+                    <button data-time="60">60 min</button>
+                    <button data-time="120">2 hours</button>
+
+                </div>
+
+
+                <div class="motivation">
+
+                    <span>💭</span>
+
+                    <p id="countdownQuote">
+                        Discipline beats motivation.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RIGHT SIDE -->
+
+            <aside class="side-panel">
+
+
+                <!-- EXAM -->
+
+                <div class="side-card">
+
+                    <span class="label">
+                        🎯 YOUR MISSION
+                    </span>
+
+                    <h3 id="countdownMission">
+                        NIMCET 2027
+                    </h3>
+
+                    <p id="countdownExamDays">
+                        Set your exam date
+                    </p>
+
+                </div>
+
+
+                <!-- MUSIC -->
+
+                <div class="side-card">
+
+                    <span class="label">
+                        🎧 STUDY MUSIC
+                    </span>
+
+                    <div class="music-input">
+
+                        <input
+                            id="countdownYoutube"
+                            placeholder="Paste YouTube link">
+
+                        <button id="countdownLoadMusic">
+                            Load
+                        </button>
+
+                    </div>
+
+                    <div
+                        class="youtube-box"
+                        id="countdownYoutubeBox">
+
+                        <span>🎵</span>
+
+                        <small>
+                            Your music will appear here
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TASK -->
+
+                <div class="side-card">
+
+                    <span class="label">
+                        📋 TODAY'S TASK
+                    </span>
+
+                    <input
+                        class="task-input"
+                        id="countdownTask"
+                        placeholder="What are you studying?">
+
+                    <button
+                        class="save-task"
+                        id="saveCountdownTask">
+
+                        Save Task
+
+                    </button>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= STOPWATCH PAGE ================= -->
+
+    <section id="stopwatchPage" class="page study-page">
+
+        <header class="topbar">
+
+            <button
+                class="back-button"
+                id="stopwatchBack">
+
+                ← Home
+
+            </button>
+
+            <div class="exam-top">
+
+                <span>PREPARING FOR</span>
+
+                <strong id="stopwatchExam">
+                    NIMCET 2027
+                </strong>
+
+            </div>
+
+            <div class="streak">
+                🔥 <span id="stopwatchStreak">0</span>
+            </div>
+
+        </header>
+
+
+        <div class="study-layout">
+
+
+            <div class="timer-section">
+
+                <div class="timer-label">
+                    STOPWATCH
+                </div>
+
+                <div
+                    class="big-timer"
+                    id="stopwatchDisplay">
+
+                    00:00:00
+
+                </div>
+
+
+                <div class="timer-buttons">
+
+                    <button
+                        class="main-button"
+                        id="stopwatchStart">
+
+                        ▶ Start
+
+                    </button>
+
+                    <button
+                        class="secondary-button"
+                        id="stopwatchPause">
+
+                        ⏸ Pause
+
+                    </button>
+
+                    <button
+                        class="secondary-button"
+                        id="stopwatchReset">
+
+                        ↻ Reset
+
+                    </button>
+
+                </div>
+
+
+                <div class="motivation">
+
+                    <span>🔥</span>
+
+                    <p id="stopwatchQuote">
+                        No zero days.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <aside class="side-panel">
+
+
+                <div class="side-card">
+
+                    <span class="label">
+                        🎯 YOUR MISSION
+                    </span>
+
+                    <h3 id="stopwatchMission">
+                        NIMCET 2027
+                    </h3>
+
+                    <p id="stopwatchExamDays">
+                        Set your exam date
+                    </p>
+
+                </div>
+
+
+                <div class="side-card">
+
+                    <span class="label">
+                        🎧 STUDY MUSIC
+                    </span>
+
+                    <div class="music-input">
+
+                        <input
+                            id="stopwatchYoutube"
+                            placeholder="Paste YouTube link">
+
+                        <button id="stopwatchLoadMusic">
+                            Load
+                        </button>
+
+                    </div>
+
+                    <div
+                        class="youtube-box"
+                        id="stopwatchYoutubeBox">
+
+                        <span>🎵</span>
+
+                        <small>
+                            Your music will appear here
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="side-card">
+
+                    <span class="label">
+                        📋 TODAY'S TASK
+                    </span>
+
+                    <input
+                        class="task-input"
+                        id="stopwatchTask"
+                        placeholder="What are you studying?">
+
+                    <button
+                        class="save-task"
+                        id="saveStopwatchTask">
+
+                        Save Task
+
+                    </button>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= SETTINGS ================= -->
+
+    <section id="settingsPage" class="page">
+
+        <div class="settings-container">
+
+            <button
+                class="back-button"
+                id="settingsBack">
+
+                ← Home
+
+            </button>
+
+
+            <h1>
+                Customize Your Zone 🎨
+            </h1>
+
+            <p>
+                Make your study space feel like yours.
+            </p>
+
+
+            <div class="settings-card">
+
+                <label>
+                    🎯 Exam Name
+                </label>
+
+                <input
+                    id="examName"
+                    placeholder="Example: NIMCET 2027">
+
+
+                <label>
+                    📅 Exam Date
+                </label>
+
+                <input
+                    type="date"
+                    id="examDate">
+
+
+                <label>
+                    🎨 Choose Background
+                </label>
+
+
+                <div class="background-options">
+
+                    <button
+                        class="bg-option"
+                        data-bg="night">
+
+                        🌌 Night
+
+                    </button>
+
+                    <button
+                        class="bg-option"
+                        data-bg="rain">
+
+                        🌧️ Rain
+
+                    </button>
+
+                    <button
+                        class="bg-option"
+                        data-bg="forest">
+
+                        🌲 Forest
+
+                    </button>
+
+                    <button
+                        class="bg-option"
+                        data-bg="city">
+
+                        🌆 City
+
+                    </button>
+
+                    <button
+                        class="bg-option"
+                        data-bg="space">
+
+                        🚀 Space
+
+                    </button>
+
+                    <button
+                        class="bg-option"
+                        data-bg="cozy">
+
+                        ☕ Cozy
+
+                    </button>
+
+                </div>
+
+
+                <button
+                    class="save-settings"
+                    id="saveSettings">
+
+                    SAVE MY SETUP ⚡
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
